@@ -1,4 +1,103 @@
-<p>DEVC一次性转换语音例子对比</p>
-<p>摘要</p>
-<p>一次</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Conversion Samples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            font-size: 40px; /* 更大字体 */
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .sub-header {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #f1f1f1;
+            font-weight: bold;
+        }
+        td {
+            background-color: #fff;
+        }
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
 
+    <div class="container">
+        <!-- 方法名字和摘要 -->
+        <div class="header">
+            面向单样本语音转换的约束优化数据增广方法
+        </div>
+        <div class="sub-header">
+            Voice Conversion (VC) is the process of transform- ing the voice of one speaker into that of another while preserving the original speech content. One-shot voice conversion, which relies on a minimal amount of reference data (typically 3 to 10 seconds), faces the challenge of limited reference voice feature sets. This scarcity hampers the simultaneous achievement of high speaker similarity and high speech quality in voice conversion. To address this issue, voice data augmentation techniques can be employed to enrich the reference voice feature set, while constraint optimization algorithms can ensure the preservation of both speaker similarity and speech intelligibility during the aug- mentation process. This paper proposes a voice data augmenta- tion method based on the differential evolution algorithm for one- shot voice conversion. The one-shot voice conversion problem is formulated as a constrained optimization problem, with speaker similarity serving as the constraint and the optimization objective being the enhancement of speech intelligibility. Additionally, the algorithm employs a neighbor-based initialization method to reduce the initial search space. An early-stopping-based augmentation strategy is introduced to increase the diversity of the augmented voice data. Both qualitative and quantitative experimental evaluations demonstrate that, compared to existing VC methods, the proposed differential evolution-based voice data augmentation method achieves state-of-the-art performance in terms of speaker similarity and speech quality.
+        </div>
+
+        <!-- 表格部分 -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Rerence</th>
+                    <th>Target</th>
+                    <th>FreeVC</th>
+                    <th>YourTTS</th>
+                    <th>kNN-VC</th>
+                    <th>Phoneme Hallucinator</th>
+                    <th>DEVC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><audio controls><source src="DEVC-example/Libiri/ref/1089_134686_5.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/target/121_123859_156.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/FreeVC/1089_134686-121_123859.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/YourTTS/1089_134686-121_123859.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/kNNVC/1089_134686-121_123859.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/PH/1089_134686-121_123859.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/DEVC/1089_134686-121_123859.wav" type="audio/wav"></audio></td>
+                </tr>
+                <tr>
+                    <td><audio controls><source src="DEVC-example/Libiri/ref/1221_135767_2.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/target/1284_134647_130.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/FreeVC/11221_135767-1284_134647.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/YourTTS/1221_135767-1284_134647.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/kNNVC/1221_135767-1284_134647.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/PH/1221_135767-1284_134647.wav" type="audio/wav"></audio></td>
+                    <td><audio controls><source src="DEVC-example/Libiri/DEVC/1221_135767-1284_134647.wav" type="audio/wav"></audio></td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
